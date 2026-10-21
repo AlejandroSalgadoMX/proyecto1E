@@ -1,5 +1,6 @@
 package mx.edu.utez.proyecto1E.model.usuario;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,8 @@ public class Usuario {
     @Column(name = "username",nullable = false,unique = true)
     private String username;
     private String password;
+
+    @JsonProperty("enable")
     private  boolean is_enable;
 
     @Column(columnDefinition = "TEXT")
